@@ -1,13 +1,16 @@
 package cn.pengan.main;
-
-import cn.pengan.factory.BeanFactory;
+import cn.pengan.dao.IUserDao;
 import cn.pengan.service.IUserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
-    private static IUserService userService = (IUserService) BeanFactory.getInstance("userService");
     public static void main(String[] args) {
-        System.out.println("main中的userService" + userService);
-        int result = userService.addUser("asdasdas");
-        System.out.println("result" + result);
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+        IUserService userService = context.getBean("userService", IUserService.class);
+        System.out.println(userService);
+        IUserService userService1 = context.getBean("userService", IUserService.class);
+        System.out.println(userService1);
+        userService.addUser("admin");
     }
 }
