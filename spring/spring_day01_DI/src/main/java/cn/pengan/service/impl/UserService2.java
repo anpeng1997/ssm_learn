@@ -2,21 +2,39 @@ package cn.pengan.service.impl;
 
 import cn.pengan.service.IUserService;
 
-import java.util.Date;
+import java.util.*;
 
-public class UserService implements IUserService {
-    private String name;
-    private Integer age;
-    private Date birthday;
+public class UserService2 implements IUserService {
+    private Map setMap;
+    private List setList;
+    private String[] setStrs;
+    private Set setSet;
 
-    public UserService(String name, Integer age,Date birthday) {
-        this.name = name;
-        this.age = age;
-        this.birthday=birthday;
+    public void setSetMap(Map setMap) {
+        this.setMap = setMap;
+    }
+
+    public void setSetList(List setList) {
+        this.setList = setList;
+    }
+
+    public void setSetStrs(String[] setStrs) {
+        this.setStrs = setStrs;
+    }
+
+    public void setSetSet(Set setSet) {
+        this.setSet = setSet;
     }
 
     public void print() {
-        System.out.println("name:"+name+",age:"+age+",birthday:"+birthday);
+        System.out.println("String[]");
+        System.out.println(Arrays.toString(setStrs));
+        System.out.println("map:");
+        System.out.println(setMap);
+        System.out.println("list:");
+        System.out.println(setList);
+        System.out.println("set:");
+        System.out.println(setSet);
     }
 
     public int addUser(String name) {

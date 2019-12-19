@@ -91,7 +91,7 @@
 
   * 活着：只要容器还在，对象就一直再活着
 
-  * 死亡： 容器销毁，对象消失
+  * 死亡：容器销毁，对象消失
 
   * 总结：单例的生命周期和容器相同
 
@@ -102,3 +102,72 @@
   * 活着：对象只要再使用过程中，就一直存活者
 
   * 死亡：当对象长时间不使用时，且没有别的对象引用时，由java的GC回收
+
+## 依赖注入
+
+> 在当前类需要使用其它类的对象时，由spring为我们提供，我们只需要在配置文件中说明依赖关系的维护
+
+1. 依赖注入的能注入的三类数据：
+
+    * 基本类型和String
+
+    * 其它bean类型（在配置文件中或者注解配置过的bean)
+
+    * 复杂类型/集合类型
+
+2. 注入的方式：
+
+    * 使用构造函数提供
+
+    ```xml
+    <bean id="userService" class="cn.pengan.service.impl.UserService">
+        <constructor-arg name="name" value="defaultName"></constructor-arg>
+        <constructor-arg name="age" value="12"></constructor-arg>
+         <constructor-arg name="birthday" ref="now"></constructor-arg>
+    </bean>
+    <bean id="now" class="java.util.Date"></bean>
+    ```
+
+    * 使用set方法提供   ---更常用
+
+    ```xml
+    <!--基本类型和String、bean-->
+    <bean id="userService" class="cn.pengan.service.impl.UserService2">
+        <property name="name" value="defaultName"></property>
+        <property name="age" value="12"></property>
+        <property name="birthday" ref="now"></property>
+    </bean>
+    <bean id="now" class="java.util.Date"></bean>
+
+    <!--复杂类型/集合类型-->
+    <bean id="userService" class="cn.pengan.service.impl.UserService2">
+        <property name="setStrs">
+            <array>
+                <value>aaa</value>
+                <value>cccc</value>
+            </array>
+        </property>
+        <property name="setMap">
+            <map>
+                <entry key="key1" value="value1"></entry>
+                <entry key="key2" value="value2"></entry>
+                <entry key="key3" value="value3"></entry>
+            </map>
+        </property>
+        <property name="setList">
+            <list>
+                <value>HHHH</value>
+                <value>LLLL</value>
+            </list>
+        </property>
+        <property name="setSet">
+            <set>
+                <value>PPPP</value>
+                <value>OOOOO</value>
+            </set>
+        </property>
+    </bean>
+    ```
+
+    * 使用注解提供
+
