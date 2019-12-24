@@ -3,16 +3,17 @@ package cn.pengan.service.impl;
 import cn.pengan.dao.IStudentDao;
 import cn.pengan.domain.Student;
 import cn.pengan.service.IStudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("studentService")
 public class StudentService implements IStudentService {
 
+    @Autowired
     private IStudentDao studentDao;
 
-    public void setStudentDao(IStudentDao studentDao) {
-        this.studentDao = studentDao;
-    }
     @Override
     public Student findById(Integer id) {
        return studentDao.findById(id);

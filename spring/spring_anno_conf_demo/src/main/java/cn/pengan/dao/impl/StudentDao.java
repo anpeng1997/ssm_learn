@@ -2,17 +2,18 @@ package cn.pengan.dao.impl;
 
 import cn.pengan.dao.IStudentDao;
 import cn.pengan.domain.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
+@Repository("studentDao")
 public class StudentDao implements IStudentDao {
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
 
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override

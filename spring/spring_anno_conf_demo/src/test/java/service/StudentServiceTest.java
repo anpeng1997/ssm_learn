@@ -1,6 +1,7 @@
-package cn.pengan.service;
+package service;
 
 import cn.pengan.domain.Student;
+import cn.pengan.service.IStudentService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

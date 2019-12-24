@@ -1,4 +1,5 @@
 package cn.peng.dao;
 
-public class IUserDao {
+public interface IUserDao {
+    public void addUser(String name);
 }

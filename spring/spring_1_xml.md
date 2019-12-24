@@ -171,3 +171,36 @@
 
     * 使用注解提供
 
+## spring ioc xml配置demo  
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--service 的配置-->
+    <bean id="studentService" class="cn.pengan.service.impl.StudentService">
+        <property name="studentDao" ref="studentDao"></property>
+    </bean>
+    <!--依赖dao层，所以要注入-->
+    <bean id="studentDao" class="cn.pengan.dao.impl.StudentDao">
+    <!--dao中又依赖jdbcTemplate-->
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+    <!--dao层的配置,设置成多例的，以防止多个dao调用同一个，产生线程安全问题-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" scope="prototype">
+        <constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+    </bean>
+    <!--注入 Druid连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/study"></property>
+        <property name="name" value="root"></property>
+        <property name="password" value="root" />
+        <property name="maxActive" value="20" />  
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="1" />
+    </bean>
+</beans>
+```  
