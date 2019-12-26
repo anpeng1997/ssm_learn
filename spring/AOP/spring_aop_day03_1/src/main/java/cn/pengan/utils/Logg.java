@@ -1,24 +1,34 @@
 package cn.pengan.utils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 
+@Aspect
 public class Logg {
-    public void printAfterLogg() {
-        System.out.println("after...");
-    }
 
-    public void printAfterReturningLogg() {
-        System.out.printf("after-returning...");
-    }
+    @Pointcut("execution(* cn.pengan.service.impl.*.*(..))")
+    private void pt(){}
 
-    public void printAfterThrowingLogg() {
-        System.out.printf("after-throwing...");
-    }
+//    @After("pt()")
+//    public void printAfterLogg() {
+//        System.out.println("after...");
+//    }
+//
+//    @AfterReturning("pt()")
+//    public void printAfterReturningLogg() {
+//        System.out.printf("after-returning...");
+//    }
+//    @AfterThrowing("pt()")
+//    public void printAfterThrowingLogg() {
+//        System.out.printf("after-throwing...");
+//    }
+//
+//    @Before("pt()")
+//    public void printBeforeLogg() {
+//        System.out.println("Before...");
+//    }
 
-    public void printBeforeLogg() {
-        System.out.println("Before...");
-    }
-
+    @Around("pt()")
     public Object printAroundLogger(ProceedingJoinPoint proceedingJoinPoint) {
         Object result = null;
         System.out.println("printAroundLogger.....");
