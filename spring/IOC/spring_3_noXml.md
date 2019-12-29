@@ -2,7 +2,7 @@
 
 * `@Configuration`
     > 指定当前类是一个配置类  
-    > 当配置类作为AnnotationConfigApplicationContext对象创建的参数时，该注解可以不写.33333333333333333
+    > 当配置类作为AnnotationConfigApplicationContext对象创建的参数时，该注解可以不写.
 
 * `@ComponetScan`
     >用于通过注解指定spring在创建容器时要扫描的包  

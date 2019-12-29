@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="studentDao" class="cn.pengan.dao.impl.StudentDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+    
+    <bean id="studentService" class="cn.pengan.service.impl.StudentService">
+        <property name="studentDao" ref="studentDao"></property>
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/study?serverTimezone=GMT"></property>
+        <property name="name" value="root"></property>
+        <property name="password" value="root" />
+        <property name="maxActive" value="20" />
+
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="1" />
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" scope="prototype">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+<!-- aop-->
+<!--    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+    <bean id="connectionUtils" class="cn.pengan.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="transactionManager" class="cn.pengan.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <aop:config>
+        <aop:pointcut id="pt" expression="execution(* cn.pengan.service.impl.*.*(..))"/>
+        <aop:aspect id="transaction" ref="transactionManager">
+            <aop:before method="beginTransaction" pointcut-ref="pt"></aop:before>
+            <aop:after-returning method="commit" pointcut-ref="pt"></aop:after-returning>
+            <aop:after-throwing method="rollback" pointcut-ref="pt"></aop:after-throwing>
+            <aop:after method="release" pointcut-ref="pt"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>
