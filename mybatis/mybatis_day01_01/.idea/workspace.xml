@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="852af9fc-ef4a-4d3f-a2da-a007f1ebbe0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/pengan/dao/IStudentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/pengan/domain/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cn/pengan/dao/IStudentDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/cn/peng/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/dao/IStudentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/dao/impl/StudentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/domain/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/service/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/service/impl/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/utils/ConnectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/java/cn/pengan/utils/TransactionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/main/resources/bean.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring/AOP/spring_aop_day3_2_demo/src/test/java/cn/pengan/service/StudentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/IOC/spring_3_noXml.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/IOC/spring_3_noXml.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/IOC/spring_2_anno.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/IOC/spring_2_anno.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577598769463</updated>
-      <workItem from="1577598773449" duration="7209000" />
+      <workItem from="1577598773449" duration="7813000" />
     </task>
     <servers />
   </component>
@@ -127,22 +112,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1577600471718" />
-    <state width="1877" height="313" key="GridCell.Tab.0.bottom" timestamp="1577607397664">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom" timestamp="1577619639221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577607397664" />
-    <state width="1877" height="313" key="GridCell.Tab.0.center" timestamp="1577607397663">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577619639221" />
+    <state width="1877" height="313" key="GridCell.Tab.0.center" timestamp="1577619639221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577607397663" />
-    <state width="1877" height="313" key="GridCell.Tab.0.left" timestamp="1577607397663">
+    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577619639221" />
+    <state width="1877" height="313" key="GridCell.Tab.0.left" timestamp="1577619639221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577607397663" />
-    <state width="1877" height="313" key="GridCell.Tab.0.right" timestamp="1577607397664">
+    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577619639221" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right" timestamp="1577619639221">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577607397664" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577619639221" />
     <state x="652" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1577598826094">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

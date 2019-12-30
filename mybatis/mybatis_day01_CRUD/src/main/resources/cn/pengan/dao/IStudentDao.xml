@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.pengan.dao.IStudentDao">
+    <select id="findAll" resultType="Student">
+            select * from students;
+     </select>
+    <select id="findById" resultType="Student" parameterType="Integer">
+            select * from students where id = #{id}
+    </select>
+    <update id="update" parameterType="Student">
+        update students set name =#{name},age=#{age},score=#{score} where id = #{id};
+    </update>
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from students where id=#{id}
+    </delete>
+    <insert id="add" parameterType="Student">
+        insert into students(name,age,score) values (#{name},#{age},#{score});
+    </insert>
+</mapper>
