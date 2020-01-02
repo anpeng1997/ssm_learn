@@ -4,10 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+    <properties resource="jdbcConfig.properties">
+    </properties>
     <typeAliases>
         <package name="cn.pengan"/>
     </typeAliases>
-<!--    <mappers>-->
-<!--        <mapper resource="classpath:cn/pengan/dao/IStudentDao.xml"></mapper>-->
-<!--    </mappers>-->
+    <mappers>
+        <mapper resource="classpath:cn/pengan/dao/IStudentDao.xml"></mapper>
+        <package name="cn.pengan.dao"/>
+    </mappers>
 </configuration>
