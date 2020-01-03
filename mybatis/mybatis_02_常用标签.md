@@ -23,9 +23,9 @@
     >这里说的是`<mappers>`标签下的`<package>`：指定dao接口包，就不用指定resource或class属性了
 
     ```xml
-        <mappers>
-            <package name="cn.pengan.dao"/>
-        </mappers>
+    <mappers>
+        <package name="cn.pengan.dao"/>
+    </mappers>
     ```
 
 ## mapper配置文件中sql常用标签
