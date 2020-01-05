@@ -15,9 +15,28 @@
             <result property="money" column="money"></result>
         </collection>
     </resultMap>
+    <resultMap id="userAndRoleMap" type="user">
+        <id column="uid" property="uid"></id>
+        <result column="username" property="username"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+           <collection property="roles" ofType="role">
+               <id column="rid" property="rid"></id>
+               <result column="rolename" property="roleName"></result>
+               <result column="description" property="description"></result>
+           </collection>
+    </resultMap>
     <select id="findAll" resultMap="userMap">
         select * FROM t_user as u
         left join t_account as a
         on u.uid = a.uid
+    </select>
+<!--    多对多，一个用户有多个角色-->
+    <select id="findAllUserAndRole" resultMap="userAndRoleMap">
+        select u.*,r.* from t_user_role as ur
+        left join t_user u
+        on ur.user_id = u.uid
+        left join t_role r
+        on ur.role_id = r.rid
     </select>
 </mapper>

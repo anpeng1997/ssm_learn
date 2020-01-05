@@ -15,10 +15,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class UserTest {
+public class RoleTest {
     InputStream resourceAsStream;
     SqlSession session;
-    IUserDao userDao;
+    IRoleDao roleDao;
     @Before
     public void init(){
         try {
@@ -30,7 +30,7 @@ public class UserTest {
         SqlSessionFactory factory = sqlSessionFactoryBuilder.build(resourceAsStream);
         session = factory.openSession(true);
         //使用SqlSession创建的dao接口代理的对象
-        userDao = session.getMapper(IUserDao.class);
+        roleDao = session.getMapper(IRoleDao.class);
     }
 
     @After
@@ -38,29 +38,23 @@ public class UserTest {
         resourceAsStream.close();
         session.close();
     }
-
     @Test
     public void findAll() {
 
-        List<User> users = userDao.findAll();
-        for (User user : users) {
+        List<Role> roles = roleDao.findAll();
+        for (Role role : roles) {
             System.out.println("...........................");
-            System.out.println(user);
-           for (Account account : user.getAccounts()){
-               System.out.println("      "+account);
-           }
+            System.out.println(role);
         }
-
     }
-
     @Test
     public void findAllAndUser(){
-        List<User> allUserAndRole = userDao.findAllUserAndRole();
-        for (User user : allUserAndRole) {
-            System.out.println("-----------------");
-            System.out.println(user);
-            for (Role role : user.getRoles()) {
-                System.out.println(role);
+        List<Role> allAndUser = roleDao.findAllAndUser();
+        for (Role role : allAndUser) {
+            System.out.println("..................");
+            System.out.println(role);
+            for (User user : role.getUsers()) {
+                System.out.println(user);
             }
         }
     }
