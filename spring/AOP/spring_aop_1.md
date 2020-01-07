@@ -23,7 +23,7 @@
     </beans>
     ```
 
-3. 把通知Bean也交给spring来管理 
+3. 把通知Bean也交给spring来管理
 
     ```xml
         <!--    配置ioc-->

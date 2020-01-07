@@ -123,7 +123,7 @@
     <bean id="userService" class="cn.pengan.service.impl.UserService">
         <constructor-arg name="name" value="defaultName"></constructor-arg>
         <constructor-arg name="age" value="12"></constructor-arg>
-         <constructor-arg name="birthday" ref="now"></constructor-arg>
+        <constructor-arg name="birthday" ref="now"></constructor-arg>
     </bean>
     <bean id="now" class="java.util.Date"></bean>
     ```
