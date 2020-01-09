@@ -18,6 +18,8 @@
         <property name="suffix" value=".jsp"></property>
         <property name="prefix" value="/WEB-INF/pages/"></property>
     </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
     <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
 <!--    开启注解支持-->
     <mvc:annotation-driven></mvc:annotation-driven>
