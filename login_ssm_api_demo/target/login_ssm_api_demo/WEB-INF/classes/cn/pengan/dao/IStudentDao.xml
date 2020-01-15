@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.pengan.dao.IStudentDao">
+    <select id="findAll" resultType="cn.pengan.domain.Student">
+        select * from students
+    </select>
+   <insert id="saveStudent">
+       insert into students values(null,#{name},#{age},#{score})
+   </insert>
+    <select id="findStudentPage" resultType="cn.pengan.domain.Student">
+        select * from students limit #{pageSize} offset #{offset}
+    </select>
+    <select id="findStudentCount" resultType="int">
+        select count(*) from students
+    </select>
+    <select id="findStudentById" resultType="cn.pengan.domain.Student">
+        select * from students where id = #{id}
+    </select>
+    <delete id="deleteStudentById">
+        delete from students where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

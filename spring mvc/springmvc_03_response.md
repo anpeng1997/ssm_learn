@@ -40,7 +40,10 @@
 
 ## 方法返回值为ModelAndView类型
 
->可以在这个类中添加Model和指定要跳转的view
+>可以在这个类中添加Model和指定要跳转的view，  
+默认是使用`forward:`关键字进行转发  
+我们也可以使用`redirect:`进行重定向：  
+如果要实现重定向，重定向的方式在request域中的数据会失效，此时可以通过ModelAndView来传递数据，但是只能传递基本数据类型和String类型，因为spring mvc会将传递的数据以请求参数的方式放到url的后面，此时任何数据类型都会被转换为普通的字符串。另外，我们在jsp中取值的时候需要使用 EL 表达式中的请求参数param读取。`${param.name}`
 
 ```java
   @RequestMapping("/modelandview")
@@ -50,6 +53,8 @@
         user.setAge(20);
         user.setUsername("xixixiix");
         result.addObject("user",user);
+        //默认是使用forward:关键字进行转发
+        //result.setViewName("forward:modelandview");
         result.setViewName("modelandview");
         return result;
     }
