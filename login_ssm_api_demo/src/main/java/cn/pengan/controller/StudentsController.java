@@ -2,17 +2,17 @@ package cn.pengan.controller;
 
 import cn.pengan.domain.Student;
 import cn.pengan.service.IStudentService;
+import cn.pengan.viewModel.ApiResultModel;
+import com.sun.org.glassfish.gmbal.ParameterNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "/api/student")
+@RequestMapping(path = "/student")
 public class StudentsController {
 
     @Autowired
@@ -23,4 +23,10 @@ public class StudentsController {
         List<Student> all = studentService.findAll();
         return all;
     }
+
+    @RequestMapping(path = "/{id}",method = {RequestMethod.GET})
+    public @ResponseBody Student getById(@PathVariable("id") Integer id){
+        return  studentService.findStudentById(id);
+    }
+    
 }

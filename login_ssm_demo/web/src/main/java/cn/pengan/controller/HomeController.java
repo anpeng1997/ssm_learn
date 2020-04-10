@@ -79,9 +79,6 @@ public class HomeController {
 
     @RequestMapping(path = "/deleteStudents")
     public String deleteStudents(Integer[] ids){
-        for (Integer id : ids) {
-            System.out.println(id);
-        }
         studentService.deleteStudentById(ids);
         return "redirect:/home/studentlist";
     }

@@ -19,7 +19,7 @@
     <select id="findStudentById" resultType="cn.pengan.domain.Student">
         select * from students where id = #{id}
     </select>
-    <delete id="deleteStudentById">
+    <delete id="deleteStudentById" parameterType="int[]">
         delete from students where id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
