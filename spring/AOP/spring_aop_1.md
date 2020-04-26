@@ -82,12 +82,12 @@
                 System.out.println("before......");
                 ////明确调用业务层方法（切入点方法），假入这里不调用proceed的话，那我们的服务层方法则不会执行
                 result = proceedingJoinPoint.proceed(args);
-                System.out.println("after.......");
+                System.out.println("after-returning.......");
             } catch (Throwable throwable) {
                 System.out.println("throwing.....");
                 throwable.printStackTrace();
             } finally {
-                System.out.println("after-returning.....");
+                System.out.println("after.....");
             }
             return result;
         }
