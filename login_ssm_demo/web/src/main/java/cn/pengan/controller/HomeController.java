@@ -78,18 +78,18 @@ public class HomeController {
     }
 
     @RequestMapping(path = "/deleteStudents")
-    public String deleteStudents(Integer[] ids){
+    public String deleteStudents(Integer[] ids) {
         studentService.deleteStudentById(ids);
         return "redirect:/home/studentlist";
     }
 
-    @RequestMapping(path = "/addStudent",method = {RequestMethod.GET})
-    public String add(){
+    @RequestMapping(path = "/addStudent", method = {RequestMethod.GET})
+    public String add() {
         return "home/addStudent";
     }
 
-    @RequestMapping(path = "/addStudent",method = {RequestMethod.POST})
-    public String add(Student student){
+    @RequestMapping(path = "/addStudent", method = {RequestMethod.POST})
+    public String add(Student student) {
         studentService.saveStudent(student);
         return "redirect:/home/studentlist";
     }

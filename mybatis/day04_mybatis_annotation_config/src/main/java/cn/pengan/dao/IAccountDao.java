@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface IAccountDao {
     @Select("select * from t_account")
-    @Results(id = "accountMap",value = {
-            @Result(id = true,column = "aid",property = "aid"),
-            @Result(column = "uid",property = "uid"),
-            @Result(column = "money",property = "money"),
-            @Result(column = "uid",property = "user",one = @One(select = "cn.pengan.dao.IUserDao.findUserById",fetchType = FetchType.EAGER))
+    @Results(id = "accountMap", value = {
+            @Result(id = true, column = "aid", property = "aid"),
+            @Result(column = "uid", property = "uid"),
+            @Result(column = "money", property = "money"),
+            @Result(column = "uid", property = "user", one = @One(select = "cn.pengan.dao.IUserDao.findUserById", fetchType = FetchType.EAGER))
     })
     List<Account> findAll();
 

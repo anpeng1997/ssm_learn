@@ -7,25 +7,25 @@
         http://www.springframework.org/schema/aop
         https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<!--    配置ioc-->
+    <!--    配置ioc-->
     <bean id="userService" class="cn.pengan.service.impl.UserService"></bean>
 
     <bean id="log" class="cn.pengan.utils.Logg"></bean>
 
-<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-<!--   配置AOP-->
-<!--    <aop:config>-->
-<!--        <aop:pointcut id="servicePointcut" expression="execution(* cn.pengan.service.impl.*.*(..))"/>-->
-<!--        <aop:aspect id="aspectLog" ref="log">-->
-<!--&lt;!&ndash;           前置通知&ndash;&gt;-->
-<!--&lt;!&ndash;            <aop:before method="printBeforeLogg" pointcut-ref="servicePointcut"></aop:before>&ndash;&gt;-->
-<!--&lt;!&ndash;            后置通知&ndash;&gt;-->
-<!--&lt;!&ndash;            <aop:after method="printAfterLogg" pointcut-ref="servicePointcut"></aop:after>&ndash;&gt;-->
-<!--&lt;!&ndash;            最终通知&ndash;&gt;-->
-<!--&lt;!&ndash;            <aop:after-returning method="printAfterReturningLogg" pointcut-ref="servicePointcut"></aop:after-returning>&ndash;&gt;-->
-<!--&lt;!&ndash;            异常通知&ndash;&gt;-->
-<!--&lt;!&ndash;            <aop:after-throwing method="printAfterThrowingLogg" pointcut-ref="servicePointcut"></aop:after-throwing>&ndash;&gt;-->
-<!--            <aop:around method="printAroundLogger" pointcut-ref="servicePointcut"></aop:around>-->
-<!--        </aop:aspect>-->
-<!--    </aop:config>-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <!--   配置AOP-->
+    <!--    <aop:config>-->
+    <!--        <aop:pointcut id="servicePointcut" expression="execution(* cn.pengan.service.impl.*.*(..))"/>-->
+    <!--        <aop:aspect id="aspectLog" ref="log">-->
+    <!--&lt;!&ndash;           前置通知&ndash;&gt;-->
+    <!--&lt;!&ndash;            <aop:before method="printBeforeLogg" pointcut-ref="servicePointcut"></aop:before>&ndash;&gt;-->
+    <!--&lt;!&ndash;            后置通知&ndash;&gt;-->
+    <!--&lt;!&ndash;            <aop:after method="printAfterLogg" pointcut-ref="servicePointcut"></aop:after>&ndash;&gt;-->
+    <!--&lt;!&ndash;            最终通知&ndash;&gt;-->
+    <!--&lt;!&ndash;            <aop:after-returning method="printAfterReturningLogg" pointcut-ref="servicePointcut"></aop:after-returning>&ndash;&gt;-->
+    <!--&lt;!&ndash;            异常通知&ndash;&gt;-->
+    <!--&lt;!&ndash;            <aop:after-throwing method="printAfterThrowingLogg" pointcut-ref="servicePointcut"></aop:after-throwing>&ndash;&gt;-->
+    <!--            <aop:around method="printAroundLogger" pointcut-ref="servicePointcut"></aop:around>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
 </beans>

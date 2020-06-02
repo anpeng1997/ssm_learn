@@ -16,7 +16,9 @@
             密码： <input type="text" name="password" class="form-control">
         </div>
         <div class="form-group">
-            验证码：<a href="javascript:refreshCode();"><img id="codeimg" src="${pageContext.request.contextPath}/verification/codeimg"> </a>
+            验证码：<a href="javascript:refreshCode();"><img id="codeimg"
+                                                         src="${pageContext.request.contextPath}/verification/codeimg">
+        </a>
             <input type="text" name="verificationCode" class="form-control">
         </div>
         <div class="form-group" style="text-align: center;">
@@ -30,9 +32,9 @@
     </c:if>
 </div>
 <script>
-    function refreshCode(){
+    function refreshCode() {
         document.getElementById("codeimg")
-            .setAttribute("src","${pageContext.request.contextPath}/verification/codeimg?date="+new Date().getTime())
+            .setAttribute("src", "${pageContext.request.contextPath}/verification/codeimg?date=" + new Date().getTime())
     }
 </script>
 </body>

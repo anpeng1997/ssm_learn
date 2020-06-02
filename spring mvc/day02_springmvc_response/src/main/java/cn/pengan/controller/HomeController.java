@@ -14,29 +14,30 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeController {
 
     @RequestMapping("/index")
-    public String index(Model model){
-        User user=new User();
+    public String index(Model model) {
+        User user = new User();
         user.setAge(20);
         user.setUsername("哈哈哈");
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "index";
 
     }
 
     @RequestMapping("/modelandview")
-    public ModelAndView modelAndViewTest(){
+    public ModelAndView modelAndViewTest() {
         ModelAndView result = new ModelAndView();
-        User user=new User();
+        User user = new User();
         user.setAge(20);
         user.setUsername("xixixiix");
-        result.addObject("user",user);
+        result.addObject("user", user);
         result.setViewName("modelandview");
         return result;
     }
 
     @RequestMapping("/getjsondata")
-    public @ResponseBody User getJsonData(){
-        User user=new User();
+    public @ResponseBody
+    User getJsonData() {
+        User user = new User();
         user.setAge(20);
         user.setUsername("xixixiix");
         return user;

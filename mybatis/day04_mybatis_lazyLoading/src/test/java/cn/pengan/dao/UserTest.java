@@ -19,8 +19,9 @@ public class UserTest {
     InputStream resourceAsStream;
     SqlSession session;
     IUserDao userDao;
+
     @Before
-    public void init(){
+    public void init() {
         try {
             resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         } catch (IOException e) {
@@ -54,7 +55,7 @@ public class UserTest {
     }
 
     @Test
-    public void findAllAndUser(){
+    public void findAllAndUser() {
         List<User> allUserAndRole = userDao.findAllUserAndRole();
         for (User user : allUserAndRole) {
             System.out.println("-----------------");

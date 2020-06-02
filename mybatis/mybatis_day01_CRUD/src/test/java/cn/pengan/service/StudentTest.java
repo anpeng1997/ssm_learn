@@ -11,14 +11,15 @@ import java.util.List;
 public class StudentTest {
     ApplicationContext applicationContext;
     IStudentService studentService;
+
     @Before
-    public void init(){
+    public void init() {
         applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         studentService = applicationContext.getBean("studentService", IStudentService.class);
     }
 
     @Test
-    public void findAll(){
+    public void findAll() {
         System.out.println(studentService);
         List<Student> all = studentService.findAll();
         System.out.println(all);
@@ -28,28 +29,29 @@ public class StudentTest {
     }
 
     @Test
-    public void findById(){
+    public void findById() {
         Student byId = studentService.findById(4);
         System.out.println(byId);
     }
 
     @Test
-    public void update(){
-        Student student=new Student();
+    public void update() {
+        Student student = new Student();
         student.setId(4);
         student.setName("123456");
         student.setScore(600);
         student.setAge(55);
         studentService.update(student);
     }
+
     @Test
-    public void delete(){
+    public void delete() {
         studentService.delete(5);
     }
 
     @Test
-    public void add(){
-        Student student=new Student();
+    public void add() {
+        Student student = new Student();
         student.setId(4);
         student.setName("zhangshan");
         student.setScore(600);

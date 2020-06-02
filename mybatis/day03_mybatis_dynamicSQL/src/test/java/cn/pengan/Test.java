@@ -17,13 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Test {
     InputStream resourceAsStream;
     SqlSession session;
 
     @Before
-    public void init(){
+    public void init() {
         try {
             resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         } catch (IOException e) {
@@ -35,7 +34,7 @@ public class Test {
     }
 
     @org.junit.Test
-    public void findAll(){
+    public void findAll() {
         //使用SqlSession创建的dao接口代理的对象
         IStudentDao studentDao = session.getMapper(IStudentDao.class);
         List<Student> students = studentDao.findAll();
@@ -51,9 +50,9 @@ public class Test {
     }
 
     @org.junit.Test
-    public void search(){
+    public void search() {
         IStudentDao studentDao = session.getMapper(IStudentDao.class);
-        Student student =new Student();
+        Student student = new Student();
         //student.setName("zhangshan");
         List<Student> search = studentDao.search(student);
         for (Student s : search) {
@@ -62,12 +61,12 @@ public class Test {
     }
 
     @org.junit.Test
-    public void searchInIds(){
+    public void searchInIds() {
         IStudentDao studentDao = session.getMapper(IStudentDao.class);
-        List<Integer> ids =new ArrayList<Integer>();
+        List<Integer> ids = new ArrayList<Integer>();
         ids.add(4);
         ids.add(6);
-        QueryAO queryAO =new QueryAO();
+        QueryAO queryAO = new QueryAO();
         queryAO.setIds(ids);
         List<Student> students = studentDao.searchInIds(queryAO);
         for (Student student : students) {

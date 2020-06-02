@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Map;
 
 public class StudentDao implements IStudentDao {
-    private JdbcTemplate jdbcTemplate ;
+    private JdbcTemplate jdbcTemplate;
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     public void updateStudent(Student student) {
-        jdbcTemplate.update("update students set name=?, age=?,score=?  where id = ?;",  student.getName(),student.getAge(),student.getScore(),student.getId());
+        jdbcTemplate.update("update students set name=?, age=?,score=?  where id = ?;", student.getName(), student.getAge(), student.getScore(), student.getId());
     }
 
     public Student getStudentByName(String name) {

@@ -16,8 +16,9 @@ import java.util.List;
 public class AccountTest {
     InputStream resourceAsStream;
     SqlSession session;
+
     @Before
-    public void init(){
+    public void init() {
         try {
             resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         } catch (IOException e) {

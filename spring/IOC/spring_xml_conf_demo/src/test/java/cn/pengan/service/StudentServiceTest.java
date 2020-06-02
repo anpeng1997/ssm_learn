@@ -8,13 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class StudentServiceTest {
     ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
     IStudentService studentService = context.getBean("studentService", IStudentService.class);
+
     @Test
-    public void testUpdata(){
+    public void testUpdata() {
         studentService.delete(22);
     }
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         Student student = new Student();
         student.setName("test11");
         student.setAge(20);

@@ -3,16 +3,16 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     https://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--    第一种创建方式：spring会调用该类的默认构造函数创建对象，当该类没有空参的构造函数时，则会抛出异常-->
-<!--    <bean id="userService" class="cn.pengan.service.impl.UserService"></bean>-->
-<!--    <bean id="userDao" class="cn.pengan.dao.impl.UserDao"></bean>-->
+    <!--    第一种创建方式：spring会调用该类的默认构造函数创建对象，当该类没有空参的构造函数时，则会抛出异常-->
+    <!--    <bean id="userService" class="cn.pengan.service.impl.UserService"></bean>-->
+    <!--    <bean id="userDao" class="cn.pengan.dao.impl.UserDao"></bean>-->
 
-<!-- 第二种创建方式：使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入Spring容器）-->
-<!-- 该种方式运用的场景是：当我们使用别人的jar时，我们只有class字节码文件,我们并不知道它是否有默认的空参构造函数，我们也不能
-改变它，所以我们只能通过普通工厂模式去创建它，或者调用它的方法创建它，spring框架再把它保存在容器当中-->
-<!--    <bean id="instanceFactory" class="cn.pengan.factory.InstanceFactory"></bean>-->
-<!--    <bean id="userService" factory-bean="instanceFactory" factory-method="getUserService"></bean>-->
+    <!-- 第二种创建方式：使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入Spring容器）-->
+    <!-- 该种方式运用的场景是：当我们使用别人的jar时，我们只有class字节码文件,我们并不知道它是否有默认的空参构造函数，我们也不能
+    改变它，所以我们只能通过普通工厂模式去创建它，或者调用它的方法创建它，spring框架再把它保存在容器当中-->
+    <!--    <bean id="instanceFactory" class="cn.pengan.factory.InstanceFactory"></bean>-->
+    <!--    <bean id="userService" factory-bean="instanceFactory" factory-method="getUserService"></bean>-->
 
-<!--  第三种创建方式：使用工厂类中的静态方法创建对象，原理与第二中方式类似，只不过是调用静态方法去创建实例而已-->
+    <!--  第三种创建方式：使用工厂类中的静态方法创建对象，原理与第二中方式类似，只不过是调用静态方法去创建实例而已-->
     <bean id="userService" class="cn.pengan.factory.StaticFactory" factory-method="getUserService"></bean>
 </beans>

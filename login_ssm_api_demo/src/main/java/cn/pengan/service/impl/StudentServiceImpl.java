@@ -30,7 +30,7 @@ public class StudentServiceImpl implements IStudentService {
         result.setTotalCount(count);
         int totalPage = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
         result.setTotalPage(totalPage);
-        List<Student> students = studentDao.findStudentPage(pageSize,offset);
+        List<Student> students = studentDao.findStudentPage(pageSize, offset);
         result.setStudents(students);
         return result;
     }
@@ -44,6 +44,6 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     public void deleteStudentById(Integer[] ids) {
-         studentDao.deleteStudentById(ids);
+        studentDao.deleteStudentById(ids);
     }
 }

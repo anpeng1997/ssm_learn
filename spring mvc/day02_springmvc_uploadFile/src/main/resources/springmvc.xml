@@ -10,10 +10,10 @@
             http://www.springframework.org/schema/mvc/spring-mvc.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
-<!--    spring要扫描的包-->
+    <!--    spring要扫描的包-->
     <context:component-scan base-package="cn.pengan"></context:component-scan>
 
-<!--    视图解析器-->
+    <!--    视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="resourceViewResolver">
         <property name="suffix" value=".jsp"></property>
         <property name="prefix" value="/WEB-INF/pages/"></property>
@@ -21,6 +21,6 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     </bean>
     <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
-<!--    开启注解支持-->
+    <!--    开启注解支持-->
     <mvc:annotation-driven></mvc:annotation-driven>
 </beans>

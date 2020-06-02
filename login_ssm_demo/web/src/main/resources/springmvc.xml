@@ -11,20 +11,20 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    只扫描controller包下的类，并且是标注了@Controller注解的类-->
+    <!--    只扫描controller包下的类，并且是标注了@Controller注解的类-->
     <context:component-scan base-package="cn.pengan.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-<!--    视图解析器-->
+    <!--    视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="suffix" value=".jsp"></property>
         <property name="prefix" value="/WEB-INF/pages/"></property>
     </bean>
 
-    <mvc:resources  location="/static/" mapping="/static/**"></mvc:resources>
+    <mvc:resources location="/static/" mapping="/static/**"></mvc:resources>
 
-<!--    开启注解支持-->
+    <!--    开启注解支持-->
     <mvc:annotation-driven></mvc:annotation-driven>
 
     <mvc:interceptors>

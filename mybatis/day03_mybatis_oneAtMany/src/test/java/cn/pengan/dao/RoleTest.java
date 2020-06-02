@@ -19,8 +19,9 @@ public class RoleTest {
     InputStream resourceAsStream;
     SqlSession session;
     IRoleDao roleDao;
+
     @Before
-    public void init(){
+    public void init() {
         try {
             resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
         } catch (IOException e) {
@@ -38,6 +39,7 @@ public class RoleTest {
         resourceAsStream.close();
         session.close();
     }
+
     @Test
     public void findAll() {
 
@@ -47,8 +49,9 @@ public class RoleTest {
             System.out.println(role);
         }
     }
+
     @Test
-    public void findAllAndUser(){
+    public void findAllAndUser() {
         List<Role> allAndUser = roleDao.findAllAndUser();
         for (Role role : allAndUser) {
             System.out.println("..................");

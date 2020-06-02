@@ -26,18 +26,18 @@ public class HomeController {
         System.out.println(realPath);
         File uploadFile = new File(realPath);
         //判断上传文件夹是否存在,不存在就创建一个
-        if (!uploadFile.exists()){
+        if (!uploadFile.exists()) {
             uploadFile.mkdir();
         }
         DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
         ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
         List<FileItem> fileItems = servletFileUpload.parseRequest(request);
         for (FileItem fileItem : fileItems) {
-            if (!fileItem.isFormField()){
+            if (!fileItem.isFormField()) {
                 String fileName = fileItem.getName();
                 String filePrefix = UUID.randomUUID().toString().replace("-", "");
-                String fileNewName=filePrefix+fileName;
-                fileItem.write(new File(realPath,fileNewName));
+                String fileNewName = filePrefix + fileName;
+                fileItem.write(new File(realPath, fileNewName));
                 //当上传的文件大于10k时，就会有缓存文件，保存完之后就要删除它
                 fileItem.delete();
             }
@@ -45,24 +45,24 @@ public class HomeController {
         return "success";
     }
 
-    @RequestMapping(path = "/uploadfile2",method = {RequestMethod.POST})
-    public String uploadFile2(HttpServletRequest request , MultipartFile upload) throws IOException {
+    @RequestMapping(path = "/uploadfile2", method = {RequestMethod.POST})
+    public String uploadFile2(HttpServletRequest request, MultipartFile upload) throws IOException {
         String realPath = request.getSession().getServletContext().getRealPath("/upload/");
         System.out.println(realPath);
         File uploadFile = new File(realPath);
         //判断上传文件夹是否存在,不存在就创建一个
-        if (!uploadFile.exists()){
+        if (!uploadFile.exists()) {
             uploadFile.mkdir();
         }
         String originalFilename = upload.getOriginalFilename();
         String uuid = UUID.randomUUID().toString().replace("-", "");
-        upload.transferTo(new File(realPath,uuid+originalFilename));
+        upload.transferTo(new File(realPath, uuid + originalFilename));
         return "success";
     }
 
-    @RequestMapping(path = "/uploadfile3",method = {RequestMethod.POST})
+    @RequestMapping(path = "/uploadfile3", method = {RequestMethod.POST})
     public String uploadFile3(MultipartFile upload) throws IOException {
-        String server="http://localhost:9090/uploads/";
+        String server = "http://localhost:9090/uploads/";
         String originalFilename = upload.getOriginalFilename();
         String uuid = UUID.randomUUID().toString().replace("-", "");
         Client client = Client.create();

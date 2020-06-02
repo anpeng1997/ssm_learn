@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>index.jsp</h1>
-    当前登录用户：${sessionScope.get("currentLoginUser").name}
-    <br/>
-    <a href="/home/studentlist">student list</a>
+<h1>index.jsp</h1>
+当前登录用户：${sessionScope.get("currentLoginUser").name}
+<br/>
+<a href="/home/studentlist">student list</a>
 </body>
 </html>

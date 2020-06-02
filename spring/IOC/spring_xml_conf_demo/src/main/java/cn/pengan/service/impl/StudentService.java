@@ -13,9 +13,10 @@ public class StudentService implements IStudentService {
     public void setStudentDao(IStudentDao studentDao) {
         this.studentDao = studentDao;
     }
+
     @Override
     public Student findById(Integer id) {
-       return studentDao.findById(id);
+        return studentDao.findById(id);
     }
 
     @Override

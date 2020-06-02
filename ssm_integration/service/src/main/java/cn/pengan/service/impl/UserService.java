@@ -21,7 +21,7 @@ public class UserService implements IUserService {
             userDao.saveUser(user);
             int i = 1 / 0;
             userDao.saveUser(user);
-        }catch (RuntimeException ex){
+        } catch (RuntimeException ex) {
             ex.printStackTrace();
             throw new RuntimeException("出现异常了");
         }

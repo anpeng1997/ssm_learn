@@ -10,7 +10,7 @@ public class MyStringToDataConverter implements Converter<String, Date> {
 
     @Override
     public Date convert(String s) {
-        if (s.isEmpty() || s == null){
+        if (s.isEmpty() || s == null) {
             throw new RuntimeException("时间格式字符串为空");
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -14,29 +14,29 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:property-placeholder location="classpath:jdbcConfig.properties"></context:property-placeholder>
-<!--    要扫描的包-->
+    <!--    要扫描的包-->
     <context:component-scan base-package="cn.pengan">
-<!--        把controller给排除掉-->
+        <!--        把controller给排除掉-->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${driver}" />
-        <property name="jdbcUrl" value="${url}" />
-        <property name="user" value="${username}" />
-        <property name="password" value="${password}" />
+        <property name="driverClass" value="${driver}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <property name="user" value="${username}"/>
+        <property name="password" value="${password}"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="pooledDataSource"></property>
     </bean>
 
-<!--    配置扫描dao中注解-->
+    <!--    配置扫描dao中注解-->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.pengan.dao"></property>
     </bean>
 
-<!--    申明式事务的配置-->
+    <!--    申明式事务的配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="pooledDataSource"></property>
     </bean>
@@ -44,11 +44,11 @@
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="*" read-only="false" isolation="DEFAULT"/>
-<!--            以find开头的方法，设置为只读的，不会进行事务的操作-->
+            <!--            以find开头的方法，设置为只读的，不会进行事务的操作-->
             <tx:method name="find*" propagation="SUPPORTS" read-only="true"></tx:method>
         </tx:attributes>
     </tx:advice>
-<!--    配置aop，表示cn.pengan.service.impl下所有的方法都要进行事务的管理-->
+    <!--    配置aop，表示cn.pengan.service.impl下所有的方法都要进行事务的管理-->
     <aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.pengan.service.impl.*.*(..))"></aop:advisor>
     </aop:config>

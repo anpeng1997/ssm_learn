@@ -7,9 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class studentTest {
     @Test
-    public void test1(){
+    public void test1() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-        IStudentService service= (IStudentService)applicationContext.getBean("studentService");
+        IStudentService service = (IStudentService) applicationContext.getBean("studentService");
         int studentCount = service.findStudentCount();
         System.out.println(studentCount);
     }

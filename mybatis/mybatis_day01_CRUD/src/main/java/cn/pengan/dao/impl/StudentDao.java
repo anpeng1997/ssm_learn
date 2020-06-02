@@ -13,8 +13,9 @@ public class StudentDao implements IStudentDao {
     }
 
     private SqlSessionTemplate sessionTemplate;
+
     public Student findById(Integer id) {
-      return sessionTemplate.selectOne("cn.pengan.dao.IStudentDao.findById",id);
+        return sessionTemplate.selectOne("cn.pengan.dao.IStudentDao.findById", id);
     }
 
     public List<Student> findAll() {
@@ -22,14 +23,14 @@ public class StudentDao implements IStudentDao {
     }
 
     public void update(Student student) {
-        sessionTemplate.update("cn.pengan.dao.IStudentDao.update",student);
+        sessionTemplate.update("cn.pengan.dao.IStudentDao.update", student);
     }
 
     public void add(Student student) {
-        sessionTemplate.insert("cn.pengan.dao.IStudentDao.add",student);
+        sessionTemplate.insert("cn.pengan.dao.IStudentDao.add", student);
     }
 
     public void delete(Integer id) {
-        sessionTemplate.delete("cn.pengan.dao.IStudentDao.delete",id);
+        sessionTemplate.delete("cn.pengan.dao.IStudentDao.delete", id);
     }
 }

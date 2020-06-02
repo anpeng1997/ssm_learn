@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 @Component("UserService")
 @Scope("singleton")
 public class UserServiceImpl implements IUserService {
-//    @Autowired
+    //    @Autowired
 //    @Qualifier("userDao")
     @Resource(name = "userDao")
 
@@ -23,7 +23,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void addUser(String name) {
         System.out.println("UserService:");
-        System.out.println("addUser:"+name);
+        System.out.println("addUser:" + name);
         userDao2.addUser(name);
     }
 }

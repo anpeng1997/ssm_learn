@@ -7,7 +7,7 @@
         <id property="aid" column="aid"></id>
         <result property="uid" column="uid"></result>
         <result property="money" column="money"></result>
-<!--        一对多一系映射-->
+        <!--        一对多一系映射-->
         <association property="user" column="uid">
             <id property="uid" column="uid"></id>
             <result property="username" column="username"></result>

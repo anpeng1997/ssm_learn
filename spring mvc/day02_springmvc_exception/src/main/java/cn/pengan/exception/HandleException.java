@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 public class HandleException implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        MyExecption ex=null;
-        if (e instanceof MyExecption){
-            ex= (MyExecption) e;
-        }else{
+        MyExecption ex = null;
+        if (e instanceof MyExecption) {
+            ex = (MyExecption) e;
+        } else {
             try {
                 throw new MyExecption("出现错误！");
             } catch (MyExecption myExecption) {
@@ -23,7 +23,7 @@ public class HandleException implements HandlerExceptionResolver {
         }
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error");
-        modelAndView.addObject("errormsg",e.getMessage());
+        modelAndView.addObject("errormsg", e.getMessage());
         return modelAndView;
     }
 }

@@ -12,10 +12,10 @@ public class StudentServiceTest {
 
 
     @Test
-    public void testTransactionTransfer(){
-        ApplicationContext applicationContext =new ClassPathXmlApplicationContext("bean.xml");
+    public void testTransactionTransfer() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         IStudentService studentService = applicationContext.getBean("studentService", IStudentService.class);
-        studentService.transactionTransfer("imm",10,"tom2");
+        studentService.transactionTransfer("imm", 10, "tom2");
         System.out.println("ok");
     }
 }

@@ -18,15 +18,17 @@ public class StudentsController {
     @Autowired
     private IStudentService studentService;
 
-    @RequestMapping(path = "/getall",method = {RequestMethod.GET})
-    public @ResponseBody List<Student> getAll(){
+    @RequestMapping(path = "/getall", method = {RequestMethod.GET})
+    public @ResponseBody
+    List<Student> getAll() {
         List<Student> all = studentService.findAll();
         return all;
     }
 
-    @RequestMapping(path = "/{id}",method = {RequestMethod.GET})
-    public @ResponseBody Student getById(@PathVariable("id") Integer id){
-        return  studentService.findStudentById(id);
+    @RequestMapping(path = "/{id}", method = {RequestMethod.GET})
+    public @ResponseBody
+    Student getById(@PathVariable("id") Integer id) {
+        return studentService.findStudentById(id);
     }
-    
+
 }

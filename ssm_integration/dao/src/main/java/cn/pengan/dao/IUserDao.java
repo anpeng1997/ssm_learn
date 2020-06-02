@@ -10,7 +10,7 @@ import java.util.List;
 @Repository("userDao")
 public interface IUserDao {
 
-   @Insert("INSERT INTO t_user values(null,#{username},#{sex},#{age})")
+    @Insert("INSERT INTO t_user values(null,#{username},#{sex},#{age})")
     void saveUser(User user);
 
     @Select("SELECT * FROM t_user")

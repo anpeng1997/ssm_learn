@@ -7,7 +7,8 @@ public class ApiResultModel implements Serializable {
     private Object data;
     private String errorMsg;
 
-    public  ApiResultModel(){ }
+    public ApiResultModel() {
+    }
 
     public ApiResultModel(Boolean status, Object data, String errorMsg) {
         this.status = status;

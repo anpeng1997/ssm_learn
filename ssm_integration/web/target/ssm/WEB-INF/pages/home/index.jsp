@@ -11,6 +11,6 @@
     <title>index</title>
 </head>
 <body>
-    <h1>home index  page!</h1>
+<h1>home index page!</h1>
 </body>
 </html>

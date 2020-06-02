@@ -20,6 +20,6 @@
         </environment>
     </environments>
     <mappers>
-       <package name="cn.pengan.dao"/>
+        <package name="cn.pengan.dao"/>
     </mappers>
 </configuration>

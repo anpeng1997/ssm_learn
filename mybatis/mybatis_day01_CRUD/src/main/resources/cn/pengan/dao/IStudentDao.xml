@@ -5,10 +5,10 @@
 
 <mapper namespace="cn.pengan.dao.IStudentDao">
     <select id="findAll" resultType="Student">
-            select * from students;
-     </select>
+        select * from students;
+    </select>
     <select id="findById" resultType="Student" parameterType="Integer">
-            select * from students where id = #{id}
+        select * from students where id = #{id}
     </select>
     <update id="update" parameterType="Student">
         update students set name =#{name},age=#{age},score=#{score} where id = #{id};

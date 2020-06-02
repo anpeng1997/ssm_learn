@@ -15,18 +15,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = springConfig.class)
 public class StudentServiceTest {
-//    ApplicationContext context = new AnnotationConfigApplicationContext(springConfig.class);
+    //    ApplicationContext context = new AnnotationConfigApplicationContext(springConfig.class);
 //    //ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
 //    IStudentService studentService = context.getBean("studentService", IStudentService.class);
     @Autowired
     private IStudentService studentService;
 
     @Test
-    public void testUpdata(){
+    public void testUpdata() {
     }
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         Student student = new Student();
         student.setName("test11");
         student.setAge(20);

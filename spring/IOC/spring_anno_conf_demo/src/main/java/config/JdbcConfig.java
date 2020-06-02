@@ -26,11 +26,12 @@ public class JdbcConfig {
 
     @Bean
     @Scope("prototype")
-    public JdbcTemplate createJdbcTemplate(DataSource dataSource){
+    public JdbcTemplate createJdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
+
     @Bean
-    public DataSource createDataSource(){
+    public DataSource createDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUrl(url);
         druidDataSource.setPassword(password);

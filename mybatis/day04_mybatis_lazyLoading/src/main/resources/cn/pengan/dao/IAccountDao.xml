@@ -8,12 +8,12 @@
         <id property="aid" column="aid"></id>
         <result property="uid" column="uid"></result>
         <result property="money" column="money"></result>
-<!--        一对多一映射 ,设置延迟加载-->
+        <!--        一对多一映射 ,设置延迟加载-->
         <association property="user" column="uid" select="cn.pengan.dao.IUserDao.findUserById">
         </association>
     </resultMap>
     <select id="findAll" resultMap="accountMap" useCache="true">
-      select * from t_account
+        select * from t_account
     </select>
     <select id="findAccountById" resultType="account" parameterType="int">
         select * from t_account where uid = #{uid}

@@ -16,7 +16,7 @@ public class HomeController {
     private IUserService userService;
 
     @RequestMapping(path = "/index")
-    public String index(User user){
+    public String index(User user) {
         userService.saveUser(user);
         return "/home/index";
     }

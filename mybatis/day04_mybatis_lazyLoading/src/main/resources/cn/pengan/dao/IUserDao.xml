@@ -8,8 +8,9 @@
         <result property="username" column="username"></result>
         <result property="sex" column="sex"></result>
         <result property="age" column="age"></result>
-<!--        一对多关系映射-->
-        <collection property="accounts" column="uid" ofType="account" select="cn.pengan.dao.IAccountDao.findAccountById">
+        <!--        一对多关系映射-->
+        <collection property="accounts" column="uid" ofType="account"
+                    select="cn.pengan.dao.IAccountDao.findAccountById">
         </collection>
     </resultMap>
     <resultMap id="userAndRoleMap" type="user">
@@ -17,16 +18,16 @@
         <result column="username" property="username"></result>
         <result column="sex" property="sex"></result>
         <result column="age" property="age"></result>
-           <collection property="roles" ofType="role">
-               <id column="rid" property="rid"></id>
-               <result column="rolename" property="roleName"></result>
-               <result column="description" property="description"></result>
-           </collection>
+        <collection property="roles" ofType="role">
+            <id column="rid" property="rid"></id>
+            <result column="rolename" property="roleName"></result>
+            <result column="description" property="description"></result>
+        </collection>
     </resultMap>
     <select id="findAll" resultMap="userMap">
         select * from t_user
     </select>
-<!--    多对多，一个用户有多个角色-->
+    <!--    多对多，一个用户有多个角色-->
     <select id="findAllUserAndRole" resultMap="userAndRoleMap">
         select u.*,r.* from t_user_role as ur
         left join t_user u

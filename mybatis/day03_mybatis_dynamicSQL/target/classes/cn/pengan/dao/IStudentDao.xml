@@ -9,17 +9,17 @@
     </select>
     <select id="search" resultType="Student" parameterType="Student">
         select * from Students where 1=1
-       <if test="name != null"></if>
-       and name = #{name}
+        <if test="name != null"></if>
+        and name = #{name}
     </select>
     <select id="searchInIds" resultType="Student">
         select * from Students
         <if test="ids != null and ids.size() > 0">
-           <where>
-               <foreach collection="ids" open="id in(" close=")" item="id" separator=",">
-                   #{id}
-               </foreach>
-           </where>
+            <where>
+                <foreach collection="ids" open="id in(" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+            </where>
         </if>
     </select>
 </mapper>

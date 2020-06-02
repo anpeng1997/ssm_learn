@@ -12,23 +12,23 @@
             http://www.springframework.org/schema/context/spring-context.xsd">
     <context:component-scan base-package="cn.pengan"></context:component-scan>
 
-<!--    视图解析器-->
+    <!--    视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="suffix" value=".jsp"></property>
         <property name="prefix" value="/WEB-INF/pages/"></property>
     </bean>
-<!--    拦截器-->
+    <!--    拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
-    <!--要拦截的方法-->
+            <!--要拦截的方法-->
             <mvc:mapping path="/home/index"/>
-<!--            不要拦截的方法-->
-<!--            <mvc:exclude-mapping path=""/>-->
-<!--            实现了HandelInterceptor的类-->
+            <!--            不要拦截的方法-->
+            <!--            <mvc:exclude-mapping path=""/>-->
+            <!--            实现了HandelInterceptor的类-->
             <bean class="cn.pengan.interceptor.MyInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
-<!--    注解支持-->
+    <!--    注解支持-->
     <mvc:annotation-driven></mvc:annotation-driven>
 </beans>
 

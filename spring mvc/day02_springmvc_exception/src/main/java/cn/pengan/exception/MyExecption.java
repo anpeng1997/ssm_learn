@@ -1,6 +1,6 @@
 package cn.pengan.exception;
 
-public class MyExecption extends Exception  {
+public class MyExecption extends Exception {
     private String message;
 
     public MyExecption(String message) {

@@ -5,13 +5,13 @@
 
 <configuration>
     <properties resource="jdbcConfig.properties"></properties>
-    
+
     <settings>
-<!--        配置启用延迟加载-->
+        <!--        配置启用延迟加载-->
         <setting name="lazyLoadingEnabled" value="true"/>
-<!--        设置按需加载-->
+        <!--        设置按需加载-->
         <setting name="aggressiveLazyLoading" value="false"/>
-<!--        开启二级缓存-->
+        <!--        开启二级缓存-->
         <setting name="cacheEnabled" value="true"/>
     </settings>
     <typeAliases>

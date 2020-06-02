@@ -16,7 +16,7 @@
         </environment>
     </environments>
     <mappers>
-<!--        <mapper resource="cn/pengan/dao/IStudentDao.xml"></mapper>-->
-    <mapper class="cn.pengan.dao.IStudentDao"></mapper>
+        <!--        <mapper resource="cn/pengan/dao/IStudentDao.xml"></mapper>-->
+        <mapper class="cn.pengan.dao.IStudentDao"></mapper>
     </mappers>
 </configuration>

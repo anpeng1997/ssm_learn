@@ -16,7 +16,7 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student findById(Integer id) {
-       return studentDao.findById(id);
+        return studentDao.findById(id);
     }
 
     @Override

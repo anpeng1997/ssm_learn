@@ -18,7 +18,7 @@ public interface IStudentDao {
     public int saveStudent(Student student);
 
     @Select("select * from students limit #{pageSize} offset #{offset}")
-    public List<Student> findStudentPage(@Param("pageSize") int pageSize,@Param("offset") int offset);
+    public List<Student> findStudentPage(@Param("pageSize") int pageSize, @Param("offset") int offset);
 
     @Select("select count(*) from students")
     public int findStudentCount();
@@ -28,9 +28,9 @@ public interface IStudentDao {
 
     @Delete({"<script>",
             "delete from students where id in"
-            ,"<foreach collection='ids' item='id' open='(' separator=',' close=')'>",
+            , "<foreach collection='ids' item='id' open='(' separator=',' close=')'>",
             "#{id}",
             "</foreach>",
             "</script>"})
-    public void deleteStudentById(@Param("ids")Integer[] ids);
+    public void deleteStudentById(@Param("ids") Integer[] ids);
 }

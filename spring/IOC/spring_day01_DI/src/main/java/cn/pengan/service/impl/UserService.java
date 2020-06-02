@@ -9,14 +9,14 @@ public class UserService implements IUserService {
     private Integer age;
     private Date birthday;
 
-    public UserService(String name, Integer age,Date birthday) {
+    public UserService(String name, Integer age, Date birthday) {
         this.name = name;
         this.age = age;
-        this.birthday=birthday;
+        this.birthday = birthday;
     }
 
     public void print() {
-        System.out.println("name:"+name+",age:"+age+",birthday:"+birthday);
+        System.out.println("name:" + name + ",age:" + age + ",birthday:" + birthday);
     }
 
     public int addUser(String name) {

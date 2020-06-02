@@ -6,9 +6,9 @@
 <configuration>
     <properties resource="jdbcConfig.properties"></properties>
     <settings>
-<!--        配置启用延迟加载-->
+        <!--        配置启用延迟加载-->
         <setting name="lazyLoadingEnabled" value="true"/>
-<!--        设置按需加载-->
+        <!--        设置按需加载-->
         <setting name="aggressiveLazyLoading" value="false"/>
     </settings>
     <typeAliases>

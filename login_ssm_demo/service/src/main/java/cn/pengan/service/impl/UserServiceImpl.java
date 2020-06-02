@@ -13,6 +13,6 @@ public class UserServiceImpl implements IUserService {
     private IUserDao userDao;
 
     public User findUserByNamePwd(String name, String password) {
-        return userDao.findUserByNamePwd(name,password);
+        return userDao.findUserByNamePwd(name, password);
     }
 }

@@ -7,7 +7,7 @@
     <typeAliases>
         <package name="cn.pengan"/>
     </typeAliases>
-<!--    <mappers>-->
-<!--        <mapper resource="classpath:cn/pengan/dao/IStudentDao.xml"></mapper>-->
-<!--    </mappers>-->
+    <!--    <mappers>-->
+    <!--        <mapper resource="classpath:cn/pengan/dao/IStudentDao.xml"></mapper>-->
+    <!--    </mappers>-->
 </configuration>

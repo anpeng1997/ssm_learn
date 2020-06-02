@@ -14,12 +14,12 @@ public class TransactionManager {
     /**
      * 开启事务
      */
-    public void beginTransaction(){
+    public void beginTransaction() {
         try {
             System.out.println("beginTransaction....");
             System.out.println(connectionUtils.getThreadConnection().toString());
             connectionUtils.getThreadConnection().setAutoCommit(false);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -27,11 +27,11 @@ public class TransactionManager {
     /**
      * 提交事务
      */
-    public  void commit(){
+    public void commit() {
         try {
             System.out.println("commit....");
             connectionUtils.getThreadConnection().commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -39,11 +39,11 @@ public class TransactionManager {
     /**
      * 回滚事务
      */
-    public  void rollback(){
+    public void rollback() {
         try {
             System.out.println("rollback............");
             connectionUtils.getThreadConnection().rollback();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -52,12 +52,12 @@ public class TransactionManager {
     /**
      * 释放连接
      */
-    public void release(){
+    public void release() {
         try {
             System.out.println("release.............");
             connectionUtils.getThreadConnection().close();//还回连接池中
             connectionUtils.removeConnection();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

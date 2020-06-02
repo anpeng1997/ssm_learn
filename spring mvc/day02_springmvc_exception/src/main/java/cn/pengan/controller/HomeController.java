@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping(path = "/index")
-    public String index() throws MyExecption{
+    public String index() throws MyExecption {
         try {
-            int i = 1/0;
-        }catch (Exception EX){
+            int i = 1 / 0;
+        } catch (Exception EX) {
             EX.printStackTrace();
             throw new MyExecption("不能除以0");
         }

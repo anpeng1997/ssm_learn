@@ -1,4 +1,5 @@
 package cn.pengan.main;
+
 import cn.pengan.service.IUserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

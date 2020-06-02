@@ -24,7 +24,7 @@
     </properties>
 
     <dependencies>
-<!--        解析spring aop中的EL表达式-->
+        <!--        解析spring aop中的EL表达式-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -88,7 +88,7 @@
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
-<!--        jstl表达式-->
+        <!--        jstl表达式-->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>

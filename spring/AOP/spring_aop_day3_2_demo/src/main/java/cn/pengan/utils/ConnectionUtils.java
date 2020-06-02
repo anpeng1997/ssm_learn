@@ -21,10 +21,11 @@ public class ConnectionUtils {
 
     /**
      * 获取当前线程上的连接
+     *
      * @return
      */
     public Connection getThreadConnection() {
-        try{
+        try {
             //1.先从ThreadLocal上获取
             Connection conn = tl.get();
             //2.判断当前线程上是否有连接
@@ -35,7 +36,7 @@ public class ConnectionUtils {
             }
             //4.返回当前线程上的连接
             return conn;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -43,7 +44,7 @@ public class ConnectionUtils {
     /**
      * 把连接和线程解绑
      */
-    public void removeConnection(){
+    public void removeConnection() {
         tl.remove();
     }
 }

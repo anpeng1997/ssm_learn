@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-    ${user.username}
-    <br/>
-    ${user.age}
+${user.username}
+<br/>
+${user.age}
 
 <img src="/static/images/MD_Wallpaper_Tree.png">
 </body>

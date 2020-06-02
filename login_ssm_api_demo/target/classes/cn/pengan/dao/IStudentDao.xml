@@ -7,9 +7,9 @@
     <select id="findAll" resultType="cn.pengan.domain.Student">
         select * from students
     </select>
-   <insert id="saveStudent">
-       insert into students values(null,#{name},#{age},#{score})
-   </insert>
+    <insert id="saveStudent">
+        insert into students values(null,#{name},#{age},#{score})
+    </insert>
     <select id="findStudentPage" resultType="cn.pengan.domain.Student">
         select * from students limit #{pageSize} offset #{offset}
     </select>

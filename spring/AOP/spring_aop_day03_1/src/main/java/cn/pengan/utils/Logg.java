@@ -7,7 +7,8 @@ import org.aspectj.lang.annotation.*;
 public class Logg {
 
     @Pointcut("execution(* cn.pengan.service.impl.*.*(..))")
-    private void pt(){}
+    private void pt() {
+    }
 
 //    @After("pt()")
 //    public void printAfterLogg() {
